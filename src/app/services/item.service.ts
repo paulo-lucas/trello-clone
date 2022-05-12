@@ -22,7 +22,7 @@ export class ItemService {
   }
 
   move(id: string, status: string): Observable<any> {
-    return this.http.put(API_URL + 'item/' + id, {}, httpOptions);
+    return this.http.put(API_URL + 'item/' + id, { status }, httpOptions);
   }
 
   remove(id: string): Observable<any> {
