@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.form;
     this.authService.login(email, password).subscribe(
       (data) => {
-        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveToken(data.token);
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.reloadPage();
