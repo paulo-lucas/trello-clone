@@ -68,6 +68,7 @@ export class BoardComponent implements OnInit {
     this.itemService.create(value).subscribe((data) => {
       this.cardStore?.newCard(data.item.id, data.item.content);
       this.lists?.[0].cards?.push(data.item.id);
+      window.location.reload();
     });
   }
 }
