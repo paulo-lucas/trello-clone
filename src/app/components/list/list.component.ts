@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from "@angular/core";
-import { ListSchema } from "../../listschema";
+import { ListSchema } from "../../models/listschema";
 import { CardStore } from "../../CardStore";
 
 @Component({

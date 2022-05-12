@@ -1,4 +1,4 @@
-import { CardSchema } from "./cardschema";
+import { CardSchema } from "./models/cardschema";
 
 type Cards = {
   [key: string]: CardSchema;
