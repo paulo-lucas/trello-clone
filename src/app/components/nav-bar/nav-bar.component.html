@@ -1,6 +1,5 @@
-<nav>
-  <ul>
-    <li><a routerLink="/login" routerLinkActive="active">Login</a></li>
-    <li><a routerLink="/dashboard" routerLinkActive="active">Dashboard</a></li>
-  </ul>
+<nav class="d-flex flex-row justify-content-between align-items-center px-4">
+  <h2>Trolle</h2>
+  <button class="btn btn-danger" *ngIf="isLoggedIn" (click)="onSignOut()">Sign Out</button>
+  <span *ngIf="!isLoggedIn"></span>
 </nav>
