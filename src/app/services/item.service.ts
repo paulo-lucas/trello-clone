@@ -1,27 +1,31 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 const API_URL = 'http://localhost:3333/';
 
+const httpOptions = {
+  headers: new HttpHeaders({ 'Content-Type': 'application/json' }),
+};
+
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ItemService {
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   list(): Observable<any> {
-    return this.http.get(API_URL + 'item/index', { responseType: 'json' });
+    return this.http.get(API_URL + 'item');
   }
 
-  create(): Observable<any> {
-    return this.http.post(API_URL + 'item/new', { responseType: 'json' });
+  create(content: string): Observable<any> {
+    return this.http.post(API_URL + 'item/new', { content }, httpOptions);
   }
 
   move(id: string, status: string): Observable<any> {
-    return this.http.put(API_URL + 'item/' + id, { responseType: 'json' });
+    return this.http.put(API_URL + 'item/' + id, {}, httpOptions);
   }
 
-  remove(): Observable<any> {
-    return this.http.delete(API_URL + 'item.delete', { responseType: 'json' });
+  remove(id: string): Observable<any> {
+    return this.http.delete(API_URL + 'item/' + id);
   }
 }
