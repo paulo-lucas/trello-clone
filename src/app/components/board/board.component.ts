@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { CardStore } from '../CardStore';
-import { ListSchema } from '../listschema';
+import { CardStore } from '../../CardStore';
+import { ListSchema } from '../../listschema';
 
 @Component({
   selector: 'app-board',
@@ -15,15 +15,15 @@ export class BoardComponent implements OnInit {
     this.cardStore = new CardStore();
     const lists: ListSchema[] = [
       {
-        name: 'To Do',
+        name: 'A Fazer',
         cards: []
       },
       {
-        name: 'Doing',
+        name: 'Em Progresso',
         cards: []
       },
       {
-        name: 'Done',
+        name: 'Concluido',
         cards: []
       }
     ]
