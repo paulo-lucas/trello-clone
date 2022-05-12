@@ -1,6 +1,6 @@
 <div class="d-flex justify-content-center align-items-center">
   <div class="col-md-3">
-    <div class="card card-container p-3">
+    <div class="card card-container p-3 border-none" style="background-color: #ffffffaa">
       <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
         class="profile-img-card w-50 rounded-circle py-4 m-auto" />
       <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
@@ -58,8 +58,8 @@
           </div>
         </div>
         <div class="form-group">
-          <button class="btn btn-primary btn-block">Sign Up</button>
-          <a routerLink="/login" routerLinkActive="active">Back to Login</a>
+          <button class="btn btn-warning btn-block">Sign Up</button>
+          <a class="text-dark" routerLink="/login" routerLinkActive="active">Back to Login</a>
         </div>
         <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
           Signup failed!<br />{{ errorMessage }}
@@ -68,7 +68,7 @@
       <div class="alert alert-success" *ngIf="isSuccessful">
         Your registration is successful!
       </div>
-      <a routerLink="/login" *ngIf="isSuccessful" routerLinkActive="active">Back to Login</a>
+      <a class="text-dark" routerLink="/login" *ngIf="isSuccessful" routerLinkActive="active">Back to Login</a>
     </div>
   </div>
 </div>

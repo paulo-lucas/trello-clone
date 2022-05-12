@@ -1,6 +1,6 @@
 <div class="d-flex h-100 justify-content-center align-items-center">
   <div class="col-md-3">
-    <div class="card card-container p-3">
+    <div class="card card-container p-3 border-none" style="background-color: #ffffffaa">
       <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="profile-img-card w-50 rounded-circle py-4 m-auto" />
       <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
         <div class="form-group">
@@ -22,10 +22,10 @@
           </div>
         </div>
         <div class="form-group">
-          <button class="btn btn-primary btn-block">
+          <button class="btn btn-warning btn-block">
             Login
           </button>
-          <a routerLink="/register" routerLinkActive="active">Register</a>
+          <a class="text-dark" routerLink="/register" routerLinkActive="active">Register</a>
         </div>
         <div class="form-group">
           <div class="alert alert-danger" role="alert" *ngIf="f.submitted && isLoginFailed">

@@ -3,7 +3,7 @@
     <input #addCardInput type="text"
       (keyup.enter)="onEnter(addCardInput.value); addCardInput.value=''; displayAddCard=false;" *ngIf="displayAddCard"
       autofocus>
-    <a href="#" class="list__newcard text-success" (click)="toggleDisplayAddCard();" *ngIf="!displayAddCard">Add a card...</a>
+    <a href="#" class="list__newcard text-white" (click)="toggleDisplayAddCard();" *ngIf="!displayAddCard">Add a card...</a>
 
 
     <div class="d-flex align-items-start">
