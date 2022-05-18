@@ -65,8 +65,8 @@ export class BoardComponent implements OnInit {
 
   onEnter(value: string) {
     this.itemService.create(value).subscribe((data) => {
-      this.cardStore?.newCard(data.item.id, data.item.content);
-      this.lists?.[0].cards?.push(data.item.id);
+      this.cardStore?.newCard(data.item._id, data.item.content);
+      this.lists?.[0].cards?.push(data.item._id);
     });
   }
 }
