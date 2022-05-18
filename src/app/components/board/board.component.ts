@@ -9,7 +9,6 @@ import { TokenStorageService } from 'src/app/services/token-storage.service';
 @Component({
   selector: 'app-board',
   templateUrl: './board.component.html',
-  styleUrls: ['./board.component.css'],
 })
 export class BoardComponent implements OnInit {
   cardStore?: CardStore;
