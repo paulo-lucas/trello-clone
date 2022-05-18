@@ -1,5 +1,5 @@
-<div class="list" (dragover)="allowDrop($event)" (drop)="drop($event)">
-	<p class="list__title"><strong>{{list?.name}}</strong></p>
+<div class="list d-inline-block bg-white p-2 m-2" style="width: 350px;" (dragover)="allowDrop($event)" (drop)="drop($event)">
+	<p class="list__title m-0 py-2"><strong>{{list?.name}}</strong></p>
 	<div class="cards">
 		<app-card *ngFor="let cardId of list?.cards" [card]="cardStore?.getCard(cardId)"></app-card>
 	</div>

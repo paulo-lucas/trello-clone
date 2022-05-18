@@ -7,7 +7,6 @@ import { ItemService } from 'src/app/services/item.service';
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css'],
 })
 export class ListComponent implements OnInit {
   @Input() list?: ListSchema;
@@ -30,24 +29,24 @@ export class ListComponent implements OnInit {
     $event.preventDefault();
     const data = $event.dataTransfer.getData('text');
     let target = $event.target;
-    const targetClassName = target.className;
-    
+    const targetClassName = target.className.split(' ');
+
     this.itemService
       .move(
         data,
         this.status[this.list?.name as 'In Progress' | 'Pending' | 'Closed']
       )
       .subscribe(() => {
-        while (target.className !== 'list') {
+        while (!target.className.split(' ').includes('list')) {
           target = target.parentNode;
         }
         target = target.querySelector('.cards');
-        if (targetClassName === 'card') {
+        if (targetClassName.includes('card')) {
           $event.target.parentNode.insertBefore(
             document.getElementById(data),
             $event.target
           );
-        } else if (targetClassName === 'list__title') {
+        } else if (targetClassName.includes('list__title')) {
           if (target.children.length) {
             target.insertBefore(
               document.getElementById(data),
